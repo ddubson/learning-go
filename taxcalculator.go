@@ -27,5 +27,6 @@ func main() {
 
 	tip := mealCost * (tipPercent / 100)
 	tax := mealCost * (taxPercent / 100)
+	// Round function does not come built-in Go, so we do int(f+0.5)
 	fmt.Printf("The total meal cost is %d dollars.\n", int(mealCost + tip + tax + 0.5))
 }
