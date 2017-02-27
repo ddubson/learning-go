@@ -10,7 +10,7 @@ func emitFox(wordChannel chan string, done chan bool) {
 
 	words := []string{"The", "Quick", "Brown", "Fox"}
 	i := 0
-	t := time.NewTimer(20 * time.Millisecond)
+	t := time.NewTimer(1 * time.Millisecond)
 
 	for {
 		select {
