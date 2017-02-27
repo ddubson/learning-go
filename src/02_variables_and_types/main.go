@@ -54,4 +54,23 @@ func main() {
 	fmt.Printf("%s\n", globalString)
 	globalString = globalString + ". CHANGED!!"
 	fmt.Printf("%s\n", globalString)
+
+	stringFunctions()
+}
+
+func stringFunctions() {
+	fmt.Println("\n------- STRING MANIPULATION ----------")
+	atoz := "the quick brown fox jumps over the lazy dog\n"
+
+	// Substring - get first 9 characters of string
+	fmt.Printf("%s\n", atoz[0:9])
+	fmt.Printf("%s\n", atoz[15:19])
+	fmt.Printf("%s\n", atoz[15:])
+
+	for _, r := range atoz {
+		fmt.Printf("%c ", r)
+	}
+
+	literalString := `Everything here is \t interpreted \n literally.`
+	fmt.Printf("\n%s\n", literalString)
 }
