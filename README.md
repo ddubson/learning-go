@@ -1,4 +1,4 @@
-# Golang Examples
+# Go Lang
 
 #### Setting up environment
 
