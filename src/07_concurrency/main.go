@@ -5,4 +5,6 @@ func main() {
 	SelectKeywordShowcase()
 	ChannelOfChannelsShowcase()
 	MultipleReadersWritersShowcase()
+	NilChannelsShowcase()
+	BufferedChannelsShowcase()
 }
