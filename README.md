@@ -1,4 +1,4 @@
-# Go Lang
+# Let's Go(Lang)
 
 #### Setting up environment
 
@@ -10,9 +10,15 @@ e.g. `go install 01_hello_world`
 
 - Run `./bin/[module-name]` to execute
 
+e.g. `./bin/01_hello_world`
+
 #### Go Format
 
 To format a module according to Go Lang style, you can run
 `go fmt [module]` to do so.
 
 e.g. `go fmt 01_hello_world`
+
+#### Go Resources
+
+Go BDD Test Framework - https://onsi.github.io/ginkgo/

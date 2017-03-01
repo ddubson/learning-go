@@ -1,10 +1,12 @@
-package main
+package main_test
 
 import (
 	"testing"
+	."10_testing"
 )
 
 /*
+	Traditional Unit Test
 	Execute via `go test 10_testing`
  */
 func TestNumStanzas(t *testing.T) {

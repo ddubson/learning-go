@@ -6,12 +6,6 @@ import (
 	"fmt"
 )
 
-type webPage struct {
-	url string
-	body []byte
-	err error
-}
-
 func (w *webPage) get() {
 	resp, err := http.Get(w.url)
 	if err != nil {
@@ -32,6 +26,8 @@ func (w *webPage) isOK() bool {
 }
 
 func main() {
+	StructsShowcase()
+
 	// w := &webPage{url: "http://www.oreilly.com/"}
 	w := new(webPage)
 
@@ -39,8 +35,8 @@ func main() {
 	w.get()
 
 	if w.isOK() {
-		fmt.Printf("URL: %s, Error: %s, Length: %d", w.url, w.err, len(w.body))
+		fmt.Printf("URL: %s, Error: %s, Length: %d\n", w.url, w.err, len(w.body))
 	} else {
-		fmt.Print("Something went wrong")
+		fmt.Print("Something went wrong\n")
 	}
 }
