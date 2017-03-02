@@ -7,4 +7,5 @@ func main() {
 	MultipleReadersWritersShowcase()
 	NilChannelsShowcase()
 	BufferedChannelsShowcase()
+	WaitGroupsShowcase()
 }

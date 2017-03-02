@@ -14,7 +14,7 @@ var (
 func work() {
 	atomic.AddInt64(&running, 1)
 	fmt.Print("[%d", running)
-	time.Sleep(time.Duration(rand.Intn(5)) * time.Second)
+	time.Sleep(time.Duration(rand.Intn(2)) * time.Second)
 	fmt.Print("]")
 	atomic.AddInt64(&running, -1)
 }
@@ -31,7 +31,7 @@ func BufferedChannelsShowcase() {
 	// At a max of 10 bools
 	sema := make(chan bool, 10)
 
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < 100; i++ {
 		go semaWorker(sema)
 	}
 
@@ -39,5 +39,5 @@ func BufferedChannelsShowcase() {
 		sema <- true
 	}
 
-	time.Sleep(30 * time.Second)
+	time.Sleep(10 * time.Second)
 }
