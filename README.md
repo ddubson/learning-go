@@ -1,4 +1,4 @@
-# Learning Go
+# 🎓 Learning Go
 
 ## 📚 Concepts
 
@@ -12,15 +12,18 @@
 
 ## 🏗 Setting up a Go environment
 
-- Install latest Go Lang via `brew install go`
-- `export GOPATH=/path/to/this/workspace`
-- To build any given module in `src`, run `go install [module-name]`
+Install latest Go Lang via `brew install go`
 
-e.g. `go install 01_hello_world`
+```shell
+mkdir ~/go
 
-- Run `./bin/[module-name]` to execute
+# For ZSH users
+echo "GOPATH=/Users/$(whoami)/go" >> ~/.zprofile && zsh -l
+```
 
-e.g. `./bin/01_hello_world`
+## Run a file
+
+e.g. `go run src/01_hello_world/main.go`
 
 ## Go Format
 

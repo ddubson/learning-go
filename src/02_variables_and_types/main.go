@@ -17,10 +17,11 @@ var (
 
 func main() {
 	basicDataTypes()
+	pointerDataTypes()
 	stringFunctions()
 	arrays()
 	maps()
-	byte_slices()
+	byteSlices()
 }
 
 func basicDataTypes() {
@@ -28,6 +29,7 @@ func basicDataTypes() {
 	var longMsg string = "This is a long-form string\n"
 
 	// Short form - variable message with dynamic resolution of type
+	// **Implicit initialization syntax ":="**
 	shortMsg := "This is a short-hand string\n"
 
 	// Int types
@@ -37,8 +39,8 @@ func basicDataTypes() {
 	// Float types
 	var pi64 float64 = 3.14
 	var pi32 float32 = 3.14
-	pi := 3.14                // inferred type
-	pi = float64(3.14)        // explicit casting to a type
+	pi := 3.14         // inferred type
+	pi = float64(3.14) // explicit casting to a type
 
 	// Boolean types
 	isTrue := true
@@ -67,7 +69,25 @@ func basicDataTypes() {
 	fmt.Printf("%s\n", globalMutableString)
 }
 
-func byte_slices() {
+func pointerDataTypes() {
+	fmt.Println("! Pointers !")
+	// Declare a pointer data type - it has to be initialized in order for contents to be set
+	var firstName *string = new(string)
+
+	// De-reference the pointer, and set the variable
+	*firstName = "Arthur"
+
+	fmt.Printf("The memory address of firstName: %xh\n", firstName)
+	fmt.Printf("The contents of firstName: %s\n", *firstName)
+
+	// Short-hand
+	lastName := "Williams"
+	// Using the "address-of" & operator
+	pointerToLastName := &lastName
+	fmt.Printf("Last name is %s and pointer to it is at %xh\n", lastName, pointerToLastName)
+}
+
+func byteSlices() {
 	f, err := os.Open("static/02_variables_and_types.txt")
 	if err != nil {
 		fmt.Printf("%s\n", err)
