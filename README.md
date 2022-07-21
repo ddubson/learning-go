@@ -1,6 +1,11 @@
 # 🎓 Learning Go
 
-## 📚 Concepts
+## 🍦 The Fundamentals
+
+- **Variables declared with `var` keyword are mutable** - when a variable is declared with the `var` keyword, it is
+  mutable, and can change during its own lifetime.
+
+## 🍨 Concepts & Constructs
 
 - [**Zero value**](https://go.dev/tour/basics/12) - when variables are declared, they are initialized to their
   respective zero value (string -> "", bool -> false). The use of keyword `var` gives you a variable initialized with a
