@@ -12,7 +12,11 @@
 
 ## 🏗 Setting up a Go environment
 
-Install latest Go Lang via `brew install go`
+### Installing Go
+
+- [On a MacOS](https://go.dev/doc/install)
+
+### Preparing the environment for local usage
 
 ```shell
 mkdir ~/go
@@ -21,17 +25,29 @@ mkdir ~/go
 echo "GOPATH=/Users/$(whoami)/go" >> ~/.zprofile && zsh -l
 ```
 
-## Run a file
+## Running the samples
 
 e.g. `go run src/01_hello_world/main.go`
 
-## Go Format
+## Linting, Formatting, Maintenance, and Curation
 
 To format a module according to Go Lang style, you can run
 `go fmt [module]` to do so.
 
 e.g. `go fmt 01_hello_world`
 
+## Packaging & Distributing
+
+TBD
+
 ## Go Resources
 
-Go BDD Test Framework - https://onsi.github.io/ginkgo/
+Essentials for the real world. Wheels don't need to be reinvented.
+
+### CLI frameworks and tools
+
+- [⭐️ Cobra CLI framework](https://github.com/spf13/cobra)
+
+### Testing frameworks and tools
+
+- [Ginkgo - Go BDD Test Framework](https://onsi.github.io/ginkgo/)
