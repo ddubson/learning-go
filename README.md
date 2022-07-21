@@ -9,7 +9,7 @@
 
 - [**Zero value**](https://go.dev/tour/basics/12) - when variables are declared, they are initialized to their
   respective zero value (string -> "", bool -> false). The use of keyword `var` gives you a variable initialized with a
-  zero value.
+  zero value. [[1]](https://go.dev/ref/spec#The_zero_value)
 - [**Short variable declaration operator**](https://go.dev/tour/basics/10) - when you use `:=` operator, Go infers the
   type being declared or throws a compilation error if it cannot infer the type.
 - **Escape Analysis** - part of static code analysis done by the compiler - determines if value belongs on the stack or
