@@ -2,8 +2,9 @@
 
 ## 🍦 The Fundamentals
 
-- **[Variables declared with `var` keyword are mutable]()** - when a variable is declared with the `var` keyword, it is
-  mutable, and can change during its own lifetime.
+- **[Variables are mutable by default](src/02_variables_and_types/mutable_var.go)** - when a variable is declared with
+  the `var` keyword, it is mutable, and can change during its own lifetime. This also applies to the variables declared
+  with _short variable declaration operator_
 
 ## 🍨 Concepts & Constructs
 
