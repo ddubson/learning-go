@@ -2,7 +2,7 @@
 
 ## 🍦 The Fundamentals
 
-- **Variables declared with `var` keyword are mutable** - when a variable is declared with the `var` keyword, it is
+- **[Variables declared with `var` keyword are mutable]()** - when a variable is declared with the `var` keyword, it is
   mutable, and can change during its own lifetime.
 
 ## 🍨 Concepts & Constructs
