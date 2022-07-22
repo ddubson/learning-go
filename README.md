@@ -5,6 +5,9 @@
 - **[Variables are mutable by default](src/02_variables_and_types/mutable_var.go)** - when a variable is declared with
   the `var` keyword, it is mutable, and can change during its own lifetime. This also applies to the variables declared
   with _short variable declaration operator_
+- **Default size of types such as int and float are based on the architecture of the machine running the Go compiler** -
+  for example an `int` on a 64-bit machine, defaults to `int64`, or `int32` on a 32-bit machine.
+- **[`type <name> struct` lets you construct a user-defined structure](src/02_variables_and_types/structs.go)**
 
 ## 🍨 Concepts & Constructs
 
