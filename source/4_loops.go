@@ -1,11 +1,12 @@
-package main
+package source
 
 import (
 	"fmt"
+	"github.com/spf13/cobra"
 	"os"
 )
 
-func main() {
+func loops() {
 	// Go only has one loop concept `for` but takes the role of many traditional looping structures
 
 	var counter int = 0
@@ -29,4 +30,14 @@ func main() {
 	for index, arg := range os.Args {
 		fmt.Printf("%d: %s", index, arg)
 	}
+}
+
+func init() {
+	rootCmd.AddCommand(&cobra.Command{
+		Use:   "loops",
+		Short: "Looping and range demonstration module",
+		Run: func(cmd *cobra.Command, args []string) {
+			loops()
+		},
+	})
 }

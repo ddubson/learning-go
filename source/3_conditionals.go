@@ -1,18 +1,19 @@
-package main
+package source
 
 import (
 	"fmt"
+	"github.com/spf13/cobra"
 	"os"
 )
 
-func main() {
+func conditionals() {
 	if true {
 		fmt.Print("Something here\n")
 	}
 
 	// Shorthand for checking if error exists during printing.
 	if numberOfBytes, err := fmt.Print("Hello\n"); err != nil {
-		os.Exit(1);
+		os.Exit(1)
 	} else {
 		fmt.Printf("Printed %d characters\n", numberOfBytes)
 	}
@@ -32,10 +33,10 @@ func main() {
 		fmt.Print("OK!\n")
 	}
 
-	switch_example_vowel_count()
+	switchExampleVowelCount()
 }
 
-func switch_example_vowel_count() {
+func switchExampleVowelCount() {
 	atoz := "the quick brown fox jumps over the lazy dog"
 	vowels := 0
 	consonants := 0
@@ -54,4 +55,14 @@ func switch_example_vowel_count() {
 	}
 
 	fmt.Printf("Vowels: %d, Consonants: %d (with %d zeds)\n", vowels, consonants, zeds)
+}
+
+func init() {
+	rootCmd.AddCommand(&cobra.Command{
+		Use:   "conditionals",
+		Short: "Conditionals demonstration module",
+		Run: func(cmd *cobra.Command, args []string) {
+			conditionals()
+		},
+	})
 }

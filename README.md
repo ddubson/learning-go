@@ -8,6 +8,8 @@
 - **Default size of types such as int and float are based on the architecture of the machine running the Go compiler** -
   for example an `int` on a 64-bit machine, defaults to `int64`, or `int32` on a 32-bit machine.
 - **[`type <name> struct` lets you construct a user-defined structure](src/02_variables_and_types/structs.go)**
+- **Go is structured by modules and packages**
+- **Functions are by default package-private; to make available externally, capitalize the first character of the function name**
 
 ## 🍨 Concepts & Constructs
 
@@ -34,11 +36,35 @@ mkdir ~/go
 echo "GOPATH=/Users/$(whoami)/go" >> ~/.zprofile && zsh -l
 ```
 
-## Running the samples
+## Running the learning modules
 
-e.g. `go run src/01_hello_world/main.go`
+> The code is backed by Cobra CLI framework
+
+Run any module with `make run MOD=?` where `MOD` could be:
+
+- `hello` - Hello World intro module
+- `vars` - Variables and types module
+- `conditionals` - Conditionals and branching module
+- `loops` - Looping module
+- `func` - functions module
+- `err` - errors module
 
 ## Linting, Formatting, Maintenance, and Curation
+
+### go mod tidy
+
+> go mod tidy ensures that the go.mod file **matches the source code in the module**. It adds any missing module
+> requirements necessary to build the current module’s packages and dependencies, and it removes requirements on modules
+> that don’t provide any relevant packages. It also adds any missing entries to go.sum and removes unnecessary entries.
+
+```bash
+go mod tidy
+
+# OR
+make tidy
+```
+
+### go fmt
 
 To format a module according to Go Lang style, you can run
 `go fmt [module]` to do so.

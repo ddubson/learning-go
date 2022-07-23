@@ -1,7 +1,8 @@
-package main
+package source
 
 import (
 	"fmt"
+	"github.com/spf13/cobra"
 	"os"
 )
 
@@ -15,8 +16,9 @@ var (
 	globalMutableString = "This is a global variable string but non-constant"
 )
 
-func main() {
+func varsAndTypes() {
 	basicDataTypes()
+	mutableVars()
 	pointerDataTypes()
 	stringFunctions()
 	arrays()
@@ -67,6 +69,24 @@ func basicDataTypes() {
 	fmt.Printf("%s\n", globalMutableString)
 	globalMutableString = globalMutableString + ". CHANGED!!"
 	fmt.Printf("%s\n", globalMutableString)
+}
+
+func mutableVars() {
+	// Variables are mutable.
+	var i int32
+	i = 1
+	fmt.Println(i)
+	i = 2
+	fmt.Println(i)
+	i = 3
+	fmt.Println(i)
+
+	j := 1
+	fmt.Println(j)
+	j = 2
+	fmt.Println(j)
+	j = 3
+	fmt.Println(j)
 }
 
 func pointerDataTypes() {
@@ -185,4 +205,14 @@ func printer(w []string) {
 		fmt.Printf("%s ", word)
 	}
 	fmt.Println()
+}
+
+func init() {
+	rootCmd.AddCommand(&cobra.Command{
+		Use:   "vars",
+		Short: "Variables and types demonstration module",
+		Run: func(cmd *cobra.Command, args []string) {
+			varsAndTypes()
+		},
+	})
 }
