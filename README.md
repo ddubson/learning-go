@@ -1,5 +1,7 @@
 # 🎓 Learning Go
 
+[![Learning Go](https://github.com/ddubson/learning-go/actions/workflows/go.yml/badge.svg)](https://github.com/ddubson/learning-go/actions/workflows/go.yml)
+
 ## 🍦 The Fundamentals
 
 - **[Variables are mutable by default](source/2_variables_and_types.go)** - when a variable is declared with
