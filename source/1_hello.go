@@ -5,6 +5,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Hello returns a greeting as a string
 func Hello() string {
 	return "Hello, World!"
 }
