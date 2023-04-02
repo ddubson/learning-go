@@ -2,14 +2,15 @@
 
 ## 🍦 The Fundamentals
 
-- **[Variables are mutable by default](src/02_variables_and_types/mutable_var.go)** - when a variable is declared with
+- **[Variables are mutable by default](source/2_variables_and_types.go)** - when a variable is declared with
   the `var` keyword, it is mutable, and can change during its own lifetime. This also applies to the variables declared
   with _short variable declaration operator_
 - **Default size of types such as int and float are based on the architecture of the machine running the Go compiler** -
   for example an `int` on a 64-bit machine, defaults to `int64`, or `int32` on a 32-bit machine.
-- **[`type <name> struct` lets you construct a user-defined structure](src/02_variables_and_types/structs.go)**
+- **[`type <name> struct` lets you construct a user-defined structure](source/7_user_defined_types.go)**
 - **Go is structured by modules and packages**
-- **Functions are by default package-private; to make available externally, capitalize the first character of the function name**
+- Functions are by default **package-private**.
+- To export to make available externally, **capitalize** the first character of the function name
 
 ## 🍨 Concepts & Constructs
 
@@ -48,6 +49,7 @@ Run any module with `make run MOD=?` where `MOD` could be:
 - `loops` - Looping module
 - `func` - functions module
 - `err` - errors module
+- `userdefinedtypes` - user defined types (e.g. structs) module
 
 ## Linting, Formatting, Maintenance, and Curation
 

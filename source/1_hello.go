@@ -5,8 +5,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func hello() {
-	fmt.Print("hello World!")
+func Hello() string {
+	return "Hello, World!"
 }
 
 func init() {
@@ -14,7 +14,7 @@ func init() {
 		Use:   "hello",
 		Short: "Welcome!",
 		Run: func(cmd *cobra.Command, args []string) {
-			hello()
+			fmt.Print(Hello())
 		},
 	})
 }

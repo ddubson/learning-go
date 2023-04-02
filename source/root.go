@@ -9,9 +9,6 @@ import (
 var rootCmd = cobra.Command{
 	Use:   "Learning Go",
 	Short: "Learning Go",
-	Run: func(cmd *cobra.Command, args []string) {
-
-	},
 }
 
 func Execute() {
