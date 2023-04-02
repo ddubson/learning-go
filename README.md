@@ -13,11 +13,13 @@
 - **Go is structured by modules and packages**
 - Functions are by default **package-private**.
 - To export to make available externally, **capitalize** the first character of the function name
+- Unused variables produce a compile-time error - you may not declare and initialize a variable without later using the
+  variable.
 
 ## 🍨 Concepts & Constructs
 
 - [**Zero value**](https://go.dev/tour/basics/12) - when variables are declared, they are initialized to their
-  respective zero value (string -> "", bool -> false). The use of keyword `var` gives you a variable initialized with a
+  respective zero value (string -> `""`, bool -> `false`). The use of keyword `var` gives you a variable initialized with a
   zero value. [[1]](https://go.dev/ref/spec#The_zero_value)
 - [**Short variable declaration operator**](https://go.dev/tour/basics/10) - when you use `:=` operator, Go infers the
   type being declared or throws a compilation error if it cannot infer the type.
@@ -57,9 +59,9 @@ Run any module with `make run MOD=?` where `MOD` could be:
 
 ### go mod tidy
 
-> go mod tidy ensures that the go.mod file **matches the source code in the module**. It adds any missing module
+> `go mod tidy` ensures that the `go.mod` file **matches the source code in the module**. It adds any missing module
 > requirements necessary to build the current module’s packages and dependencies, and it removes requirements on modules
-> that don’t provide any relevant packages. It also adds any missing entries to go.sum and removes unnecessary entries.
+> that don’t provide any relevant packages. It also adds any missing entries to `go.sum` and removes unnecessary entries.
 
 ```bash
 go mod tidy
