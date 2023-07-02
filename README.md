@@ -41,19 +41,22 @@ mkdir ~/go
 echo "GOPATH=/Users/$(whoami)/go" >> ~/.zprofile && zsh -l
 ```
 
-## Running the learning modules
+## Running examples
 
-> The code is backed by Cobra CLI framework
-
-Run any module with `make run MOD=?` where `MOD` could be:
-
-- `hello` - Hello World intro module
-- `vars` - Variables and types module
-- `conditionals` - Conditionals and branching module
-- `loops` - Looping module
-- `func` - functions module
-- `err` - errors module
-- `userdefinedtypes` - user defined types (e.g. structs) module
+```shell
+go run 01-variables-and-types/.
+go run 02-conditionals/.
+go run 03-loops/.
+go run 04-functions/.
+go run 05-errors/.
+go run 06-user-defined-types/.
+go run 07-concurrency/.
+go run 08-interfaces/.
+go test 09-testing/adder/.
+go test 09-testing/poem/.
+go run 10-builtin-libraries/.
+go run 11-file-io/.
+```
 
 ## Linting, Formatting, Maintenance, and Curation
 
@@ -65,9 +68,6 @@ Run any module with `make run MOD=?` where `MOD` could be:
 
 ```bash
 go mod tidy
-
-# OR
-make tidy
 ```
 
 ### go fmt
@@ -76,10 +76,6 @@ To format a module according to Go Lang style, you can run
 `go fmt [module]` to do so.
 
 e.g. `go fmt 01_hello_world`
-
-## Packaging & Distributing
-
-TBD
 
 ## Go Resources
 
