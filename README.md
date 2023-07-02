@@ -44,18 +44,18 @@ echo "GOPATH=/Users/$(whoami)/go" >> ~/.zprofile && zsh -l
 ## Running examples
 
 ```shell
-go run 01-variables-and-types/.
-go run 02-conditionals/.
-go run 03-loops/.
-go run 04-functions/.
-go run 05-errors/.
-go run 06-user-defined-types/.
-go run 07-concurrency/.
-go run 08-interfaces/.
-go test 09-testing/adder/.
-go test 09-testing/poem/.
-go run 10-builtin-libraries/.
-go run 11-file-io/.
+go run 01-variables-and-types/*.go
+go run 02-conditionals/*.go
+go run 03-loops/*.go
+go run 04-functions/*.go
+go run 05-errors/*.go
+go run 06-user-defined-types/*.go
+go run 07-concurrency/*.go
+go run 08-interfaces/*.go
+go test 09-testing/adder/*.go
+go test 09-testing/poem/*.go
+go run 10-builtin-libraries/*.go
+go run 11-file-io/*.go
 ```
 
 ## Linting, Formatting, Maintenance, and Curation

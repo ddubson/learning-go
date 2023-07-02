@@ -202,4 +202,5 @@ func main() {
 	arrays()
 	maps()
 	byteSlices()
+	TypeConversionShowcase()
 }
