@@ -14,6 +14,7 @@ func emit(c chan<- string) {
 	close(c)
 }
 
+// Input takes in a "send-only" channel (`chan<-`)
 func makeId(idChan chan<- int) {
 	id := 0
 	for {
@@ -31,7 +32,7 @@ func ChannelsShowcase() {
 	go emit(wordChannel)
 
 	// The emit goroutine pauses until the loop below reads the written value out of the channel -- 'unbuffered'
-	for word := range wordChannel {
+	for word := range <-wordChannel {
 		fmt.Printf("%s ", word)
 	}
 	fmt.Println()
@@ -39,8 +40,11 @@ func ChannelsShowcase() {
 	idChan := make(chan int)
 	go makeId(idChan)
 
-	// Read from channels.
-	fmt.Printf("%d\n", <-idChan)
-	fmt.Printf("%d\n", <-idChan)
-	fmt.Printf("%d\n", <-idChan)
+	// Read from channels -- when reading from a channel that has been closed, a zero value of channel type is returned.
+	// We check if the channel is open, then we can interpret the value returned as a value coming from the channel (not just the zero value)
+	if v, ok := <-idChan; ok {
+		fmt.Printf("%d\n", v)
+	} else {
+		fmt.Println("channel closed.")
+	}
 }

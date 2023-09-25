@@ -22,4 +22,15 @@ jobs:
           go-version: "1.20"
 
       - name: Build
-        run: make
+        run: |
+          go build -o build/ ./01-variables-and-types/
+          go build -o build/ ./02-conditionals/
+          go build -o build/ ./03-loops/
+          go build -o build/ ./04-functions/
+          go build -o build/ ./05-errors/
+          go build -o build/ ./06-user-defined-types/
+          go build -o build/ ./07-concurrency/
+          go build -o build/ ./08-interfaces/
+          go build -o build/ ./10-builtin-libraries/
+          go build -o build/ ./11-file-io/
+          go build -o build/ ./12-std-io/

@@ -43,6 +43,8 @@ echo "GOPATH=/Users/$(whoami)/go" >> ~/.zprofile && zsh -l
 
 ## Running examples
 
+> NOTE: On Windows, run the following with `go run <dir>` (sans *.go)
+
 ```shell
 go run 01-variables-and-types/*.go
 go run 02-conditionals/*.go

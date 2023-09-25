@@ -32,3 +32,5 @@ bin/
 .DS_Store
 /src/gopkg.in/yaml.v2/
 /src/github.com/onsi/
+
+build/
