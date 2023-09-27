@@ -17,11 +17,17 @@ var (
 
 func basicDataTypes() {
 	// Long form variable declaration
+	// Example of a "string literal"
 	var longMsg string = "This is a long-form string\n"
 
 	// Short form - variable message with type inference
 	// **Implicit initialization syntax ":="**
 	shortMsg := "This is a short-hand string\n"
+
+	// Raw string literal example
+	rawStringLiteral := `hi 
+		there! This allows for multi-line strings`
+	fmt.Printf(rawStringLiteral)
 
 	// Integer types
 	var unsignedInt uint = 50
