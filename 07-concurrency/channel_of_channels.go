@@ -26,7 +26,7 @@ func emitChannel(chanChannel chan chan string, done chan bool) {
 			return
 
 		case <-t.C:
-		// Run for t time and then stop the goroutine
+			// Run for t time and then stop the goroutine
 			return
 		}
 	}
@@ -38,13 +38,10 @@ func ChannelOfChannelsShowcase() {
 
 	go emitChannel(channelCh, doneCh)
 
-	wordCh := <- channelCh
+	wordCh := <-channelCh
 
 	for word := range wordCh {
 		fmt.Printf("%s ", word)
 	}
 	println()
-
-	//doneCh <- true
 }
-

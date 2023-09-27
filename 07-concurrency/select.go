@@ -23,7 +23,7 @@ func emitFox(wordChannel chan string, done chan bool) {
 			done <- true
 			return
 
-		case <- t.C: // Run for t time and then stop the goroutine
+		case <-t.C: // Run for t time and then stop the goroutine
 			return
 		}
 	}
@@ -39,6 +39,4 @@ func SelectKeywordShowcase() {
 		fmt.Printf("%s ", word)
 	}
 	println()
-
-	//doneCh <- true
 }

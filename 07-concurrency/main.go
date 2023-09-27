@@ -8,4 +8,5 @@ func main() {
 	NilChannelsShowcase()
 	BufferedChannelsShowcase()
 	WaitGroupsShowcase()
+	CancelFunctionShowcase()
 }
