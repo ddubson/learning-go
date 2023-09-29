@@ -3,41 +3,37 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"sync/atomic"
-	"time"
 )
 
-var (
-	running int64 = 0
-)
-
-func work() {
-	atomic.AddInt64(&running, 1)
-	fmt.Print("[%d", running)
-	time.Sleep(time.Duration(rand.Intn(2)) * time.Second)
-	fmt.Print("]")
-	atomic.AddInt64(&running, -1)
+func process(i int) int {
+	return i + rand.Int()
 }
 
-func semaWorker(sema chan bool) {
-	<-sema // receive from channel (blocking)
-
-	work()
-
-	sema <- true // put true onto channel
-}
-
+// BufferedChannelsShowcase
+//
+// An example of idiomatic use of buffered channels -- knowing exactly how many goroutines that will be launched and
+// will write to the channel ahead of time.
 func BufferedChannelsShowcase() {
-	// At a max of 10 bools
-	sema := make(chan bool, 10)
+	// # of goroutines to be launched, but also the size of the channel buffer, each routine contributes 1 result
+	const conc = 10
 
-	for i := 0; i < 100; i++ {
-		go semaWorker(sema)
+	// results channel where all results from concurrent ops are aggregated into
+	results := make(chan int, conc)
+
+	// Launch conc # of goroutines
+	for i := 0; i < conc; i++ {
+		// Take in an integer -- use the index for simplicity
+		go func(i int) {
+			// Process the int, and send it to channel. do this once.
+			results <- process(i)
+		}(i)
 	}
 
-	for i := 0; i < 10; i++ {
-		sema <- true
+	var out []int
+	for i := 0; i < conc; i++ {
+		// Read from channel as results come in -- they will be out of order
+		out = append(out, <-results)
 	}
 
-	time.Sleep(10 * time.Second)
+	fmt.Printf("Collected results: %+v\n", out)
 }
